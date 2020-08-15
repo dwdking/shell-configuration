@@ -1,13 +1,8 @@
-#if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
-#    GIT_PROMPT_ONLY_IN_REPO=1
-#    source $HOME/.bash-git-prompt/gitprompt.sh
-#fi
-
 # Ensures the JAVA_HOME and JDK_HOME are set based off of the current update_alternatives java path
 export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 export JDK_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 
-# Configures git-radar from https://github.com/michaeldfallen/git-radar
+# Configures git-radar from https://github.com/dwdking/git-radar
 export PATH=$PATH:$HOME/.git-radar
 export PS1="$PS1\$(git-radar --bash --fetch)"
 
