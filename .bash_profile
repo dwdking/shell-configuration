@@ -6,8 +6,7 @@ export JDK_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 export PATH=$PATH:$HOME/.git-radar
 export PS1="$PS1\$(git-radar --bash --fetch)"
 
-alias editBash='subl ~/.bash/.bash_profile'
-alias gw='./gradlew'
+export EDITOR=subl
 
 extract () {
         if [ -f $1 ] ; then
