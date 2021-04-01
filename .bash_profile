@@ -3,7 +3,7 @@ export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 export JDK_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 
 # Configures git-radar from https://github.com/dwdking/git-radar
-export PATH=$PATH:$HOME/.git-radar
+export PATH=$PATH:$HOME/.git-radar:/opt/gradle/gradle-6.8.3/bin:/usr/local/go/bin
 export PS1="$PS1\$(git-radar --bash --fetch)"
 
 export EDITOR=subl
@@ -31,6 +31,12 @@ extract () {
          fi
     }
 
+#Node Version Manager configuration
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
